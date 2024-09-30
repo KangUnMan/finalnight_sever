@@ -1,0 +1,497 @@
+@font-face {
+    font-family: 'heiro';
+    src: url('font/HeirofLightBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-family: 'heiro';
+}
+
+.header{
+    border-radius: 10px;
+    display: flex;
+    width: 1300px;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 80px;
+    position: fixed;
+    top: 15px;
+    left: 301px;
+    z-index: 1;
+}
+
+.title{
+    font-size: 26px;
+    line-height: 80px;
+    text-align: center;
+    height: 80px;
+    width: 300px;
+    margin-left: 5px;
+}
+
+.nav{
+    height: 80px;
+    width: 900px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.nav > li{
+    margin-left: 100px;
+    font-size: 20px;
+    position: relative;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background: rgba(051, 051, 051, 0.7);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.dropdown_contents{
+    width: 150px;
+    height: auto;
+    display: none;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    z-index: 1;
+    top: 80px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.dropdown_contents a{
+    color: white;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropdown_contents a:hover{
+    background: gray;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown_contents {
+    display: block;
+}
+
+.account{
+    text-align: center;
+    height: 80px;
+    width: 200px;
+    font-size: 20px;
+    line-height: 80px;
+}
+
+.intro_bg{
+    width: 100%;
+    height: 850px;
+    background: red;
+    overflow: hidden;
+    text-align: center;
+}
+
+.intro_text{
+    width: 100%;
+    text-align: center;
+    margin-top: 330px;
+}
+
+.intro_text h1{
+    font-size: 45px;
+    margin-top: 30px;
+}
+
+.intro_text h3{
+    font-size: 25px;
+}
+
+.sec_bg {
+    background: blue;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.sec_text{
+    width: 27%;
+    margin-left: 300px;
+}
+
+.sec_text h1{
+    font-size: 55px;
+}
+
+.sec_content{
+    background: green;
+    margin-left: 70px;
+    width: 35%;
+    height: 370px;
+}
+
+.thr_bg{
+    background: purple;
+    width: 100%;
+    height: 2000px;
+    overflow: hidden;
+}
+
+.thr_bg h2{
+    font-size: 28px;
+}
+
+.thr_text{
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.thr_text h1{
+    font-size: 50px;
+}
+
+.thr_con1,
+.thr_con2,
+.thr_con3,
+.thr_con4{
+    width: 70%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thr_con1_img,
+.thr_con2_img,
+.thr_con3_img,
+.thr_con4_img{
+    margin: 0 40px;
+    background: blue;
+    width: 30%;
+    height: 250px;
+}
+
+.thr_con1_text,
+.thr_con2_text,
+.thr_con3_text,
+.thr_con4_text{
+    margin: 0 40px;
+    width: 30%;
+}
+
+.card_intro_bg,
+.game_intro_bg{
+    background: red;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.card_intro_text,
+.game_intro_text{
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+.card_intro_text h1,
+.game_intro_text h1{
+    font-size: 45px;
+}
+
+.card_infor_bg,
+.game_infor_bg{
+    background: purple;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding-bottom: 150px;
+    overflow: hidden;
+}
+
+.card_infor_bg h1,
+.game_infor_bg h1{
+    font-size: 40px;
+}
+
+.card_title,
+.game_infor_title{
+    width: 400px;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.card_title a,
+.game_infor_title a{
+    position: relative;
+    padding-bottom: 5px;
+    z-index: 0;
+    color: gray;
+}
+
+.link1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.link2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.link3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.link4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.card_title a.active,
+.game_infor_title a.active{
+    color: white;
+}
+
+.card_title a.active::after,
+.game_infor_title a.active::after{
+    transform: scaleX(1);
+}
+
+.card_title a[data-direction="right"].active::after,
+.game_infor_title a[data-direction="right"].active::after{
+    transform-origin: bottom right;
+}
+
+.card_title a[data-direction="left"].active::after,
+.game_infor_title a[data-direction="left"].active::after{
+    transform-origin: bottom left;
+}
+
+.attcard_section{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.spcard_section{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.card_infor{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    
+}
+
+.card{
+    background: black;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 176px;
+    height: 221px;
+    cursor: pointer;
+}
+
+.attcard_section, .spcard_section, .game_infor_text1, .game_infor_text2 {
+    display: none; /* 기본적으로 숨김 */
+}
+
+.attcard_section.active, .spcard_section.active, .game_infor_text1.active, .game_infor_text2.active {
+    display: block; /* 활성화된 섹션 보이기 */
+}
+
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* 배경 색상 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal img {
+    max-width: 352px;
+    max-height: 442px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+.game_infor_text1,
+.game_infor_text2{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.login_bg,
+.register_bg {
+    background: red;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container,
+.register-container {
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    width: 400px;
+    height: 400px;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(200px);
+    animation: slideUp 0.7s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h2, 
+.register-container h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+input {
+    width: 70%;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    background: none;
+}
+
+button {
+    width: 70%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    color: black;
+}
+
+button:hover {
+    background-color: beige;
+}
+
+.links {
+    text-align: center;
+}
