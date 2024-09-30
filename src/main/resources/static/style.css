@@ -121,13 +121,32 @@
     margin-top: 330px;
 }
 
+.intro_text img {
+    opacity: 0;
+    animation: fadein 1s forwards;
+}
+
 .intro_text h1{
     font-size: 45px;
     margin-top: 30px;
+    opacity: 0;
+    transform: translateY(330px);
+    animation: slideUp 1s forwards;
+    animation-delay: 0.5s;
 }
 
 .intro_text h3{
     font-size: 25px;
+    opacity: 0;
+    transform: translateY(330px);
+    animation: slideUp 1s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadein {
+    to {
+        opacity: 1;
+    }
 }
 
 .sec_bg {
@@ -142,6 +161,9 @@
 .sec_text{
     width: 27%;
     margin-left: 300px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .sec_text h1{
@@ -153,6 +175,8 @@
     margin-left: 70px;
     width: 35%;
     height: 370px;
+    opacity: 0;
+    transform: translateY(100px);
 }
 
 .thr_bg{
@@ -171,10 +195,18 @@
     text-align: center;
     margin: auto;
     margin-top: 150px;
+    
 }
 
 .thr_text h1{
     font-size: 50px;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.thr_text h3{
+    opacity: 0;
+    transform: translateY(100px);
 }
 
 .thr_con1,
@@ -187,6 +219,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+.visible {
+    animation: slideUp 1s forwards;
 }
 
 .thr_con1_img,
@@ -226,13 +264,24 @@
 .card_intro_text h1,
 .game_intro_text h1{
     font-size: 45px;
+    opacity: 0;
+    transform: translateY(150px);
+    animation: slideUp 0.7s forwards;
+}
+
+.card_intro_text h3,
+.game_intro_text h3 {
+    opacity: 0;
+    transform: translateY(150px);
+    animation: slideUp 0.7s forwards;
+    animation-delay: 0.3s;
 }
 
 .card_infor_bg,
 .game_infor_bg{
     background: purple;
     width: 100%;
-    height: auto;
+    height: 1000px;
     align-items: center;
     padding-bottom: 150px;
     overflow: hidden;
@@ -252,6 +301,10 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    opacity: 0;
+    transform: translateY(150px);
+    animation: slideUp 0.7s forwards;
+    animation-delay: 0.6s;
 }
 .card_title a,
 .game_infor_title a{
@@ -360,6 +413,11 @@
     
 }
 
+.card_infor li{
+    opacity: 0;
+    transform: translateY(150px);
+}
+
 .card{
     background: black;
     margin: auto;
@@ -419,6 +477,8 @@
     margin: auto;
     margin-top: 50px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(150px);
 }
 
 .login_bg,
@@ -448,13 +508,6 @@
     opacity: 0;
     transform: translateY(200px);
     animation: slideUp 0.7s forwards;
-}
-
-@keyframes slideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .login-container h2, 
@@ -494,4 +547,11 @@ button:hover {
 
 .links {
     text-align: center;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

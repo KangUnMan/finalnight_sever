@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    window.scrollTo(0,0);
     const link1 = document.querySelector('.link1');
     const link2 = document.querySelector('.link2');
     
