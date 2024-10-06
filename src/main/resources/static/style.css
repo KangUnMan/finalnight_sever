@@ -18,85 +18,52 @@
 .header{
     border-radius: 10px;
     display: flex;
-    width: 1300px;
+    width: 90%;
+    max-width: 1500px;
     background-color: rgba(0, 0, 0, 0.75);
     height: 80px;
     position: fixed;
     top: 15px;
-    left: 301px;
+    left: 50%;
     z-index: 1;
+    transform: translateX(-50%);
 }
 
 .title{
     font-size: 26px;
     line-height: 80px;
     text-align: center;
-    height: 80px;
     width: 300px;
     margin-left: 5px;
+    min-width: 250px;
 }
 
 .nav{
+    margin-left: 50px;
     height: 80px;
     width: 900px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
 }
 
 .nav > li{
-    margin-left: 100px;
+    margin: 0 20px;
     font-size: 20px;
-    position: relative;
-}
-
-.dropdown{
-    position: relative;
-    display: inline-block;
 }
 
 .dropbtn {
-    display: block;
-    text-align: center;
+    width: 100px;
+    height: 50px;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
 .dropbtn:hover {
     background: rgba(051, 051, 051, 0.7);
-    padding: 10px;
-    margin: 10px;
     border-radius: 5px;
-}
-
-.dropdown_contents{
-    width: 150px;
-    height: auto;
-    display: none;
-    position: absolute;
-    background: rgb(0, 0, 0);
-    z-index: 1;
-    top: 80px;
-    margin-left: 10px;
-    border-radius: 10px;
-}
-
-.dropdown_contents a{
-    color: white;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-}
-
-.dropdown_contents a:hover{
-    background: gray;
-    margin: 10px;
-    border-radius: 5px;
-}
-
-.dropdown:hover .dropdown_contents {
-    display: block;
 }
 
 .account{
@@ -105,6 +72,7 @@
     width: 200px;
     font-size: 20px;
     line-height: 80px;
+    margin-left: 20%;
 }
 
 .intro_bg{
@@ -116,12 +84,14 @@
 }
 
 .intro_text{
-    width: 100%;
+    margin: 0 auto;
+    width: 80%;
     text-align: center;
     margin-top: 330px;
 }
 
 .intro_text img {
+    max-width: 100%;
     opacity: 0;
     animation: fadein 1s forwards;
 }
@@ -483,12 +453,19 @@
 
 .login_bg,
 .register_bg {
-    background: red;
     width: auto;
-    height: auto;
+    height: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url('img/img1.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.login_bg img {
+    width: 100%;
+    height: 100%;
 }
 
 .login-container,
@@ -508,6 +485,7 @@
     opacity: 0;
     transform: translateY(200px);
     animation: slideUp 0.7s forwards;
+    animation-delay: 0.5s;
 }
 
 .login-container h2, 
