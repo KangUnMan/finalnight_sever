@@ -14,6 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const menu = document.querySelector('.menu');
+    const menucontainer = document.querySelector('.menu_container');
+    menu.addEventListener('click', function(event){
+        event.preventDefault();
+        menucontainer.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function(event) {
+        // 클릭된 요소가 메뉴 버튼이나 메뉴 컨테이너가 아닌 경우
+        if (!menu.contains(event.target) && !menucontainer.contains(event.target)) {
+            menucontainer.classList.remove('active'); // active 클래스 제거
+        }
+    });
+
     // 스크롤 이벤트 리스너 추가
     window.addEventListener('scroll', handleScroll);
 });
