@@ -16,7 +16,7 @@
 }
 
 .wrap {
-    background: url('img/img1.png') no-repeat;
+    background: url('./img/img1.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
