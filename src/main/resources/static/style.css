@@ -251,9 +251,9 @@
 
 .card_intro_text,
 .game_intro_text{
-    width: 40%;
+    width: 50%;
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .card_intro_text h1,
@@ -276,7 +276,7 @@
 .game_infor_bg{
     background: purple;
     width: 100%;
-    height: 1000px;
+    height: auto;
     align-items: center;
     padding-bottom: 150px;
     overflow: hidden;
@@ -386,7 +386,7 @@
 }
 
 .attcard_section{
-    width: 50%;
+    width: 80%;
     height: auto;
     margin: auto;
     margin-top: 50px;
@@ -394,7 +394,7 @@
 }
 
 .spcard_section{
-    width: 50%;
+    width: 80%;
     height: auto;
     margin: auto;
     margin-top: 50px;
@@ -405,7 +405,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    
+    max-width: 1000px;
+    margin: auto;
 }
 
 .card_infor li{
@@ -414,13 +415,20 @@
 }
 
 .card{
-    background: black;
     margin: auto;
     margin-top: 40px;
     margin-bottom: 20px;
     width: 176px;
     height: 221px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: black;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.24), 0 0 20px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
 }
 
 .attcard_section, .spcard_section, .game_infor_text1, .game_infor_text2 {
@@ -527,7 +535,7 @@ input {
     border: 2px solid #ccc;
     border-radius: 30px;
     box-sizing: border-box;
-    color: black;
+    color: white;
     font-family: 'Arial', sans-serif;
     background: none;
 }
@@ -649,7 +657,7 @@ button:hover {
         flex-direction: column;
         display: flex;
         position: fixed;
-        min-width: 15%;
+        min-width: 20%;
         z-index: 1;
         margin-left: 10px;
         padding-left: 5px;
@@ -740,6 +748,11 @@ button:hover {
         text-align: center;
         order: 2;
     }
+
+    .card_infor {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
 }
 
 @media (max-width: 800px){
@@ -750,5 +763,16 @@ button:hover {
 
     .sec_container{
         background: black;
+    }
+}
+
+@media (max-width: 700px){
+    .card_infor {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .card_intro_text{
+        width: 60%;
     }
 }
