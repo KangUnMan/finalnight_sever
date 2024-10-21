@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller  // @RestController가 아닌 @Controller 사용
+@Controller // @RestController가 아닌 @Controller 사용
 @RequestMapping("/api")
 public class UserController {
 
@@ -22,13 +22,13 @@ public class UserController {
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
-        return "register";  // 템플릿 파일 이름 반환
+        return "register"; // 템플릿 파일 이름 반환
     }
 
     @PostMapping("/register")
     public String processRegistration(User user) {
         userService.saveUserWithGameData(user);
-        return "redirect:/api/register?success";  // 리다이렉트 URL 수정
+        return "redirect:/api/register?success"; // 리다이렉트 URL 수정
     }
 
     @PostMapping("/login")
@@ -48,13 +48,12 @@ public class UserController {
         return nickname != null ? new NicknameResponse(true, nickname) : new NicknameResponse(false, "User not found");
     }
 
-
     static class LoginResponse {
         private boolean success;
         private String message;
         private Long userNum;
 
-        public LoginResponse(boolean success, String message , Long userNum) {
+        public LoginResponse(boolean success, String message, Long userNum) {
             this.success = success;
             this.message = message;
             this.userNum = userNum;

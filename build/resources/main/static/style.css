@@ -1,0 +1,832 @@
+@font-face {
+    font-family: 'heiro';
+    src: url('font/HeirofLightBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-family: 'heiro';
+}
+
+.wrap {
+    background: url('./img/img1.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    border-radius: 10px;
+    display: flex;
+    width: 90%;
+    max-width: 1500px;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 80px;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.title{
+    font-size: 26px;
+    line-height: 80px;
+    text-align: center;
+    width: 300px;
+    margin-left: 5px;
+    min-width: 250px;
+}
+
+.nav{
+    margin-left: 50px;
+    height: 80px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+}
+
+.nav > li{
+    margin: 0 20px;
+    font-size: 20px;
+}
+
+.dropbtn {
+    width: 100px;
+    height: 50px;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background: rgba(051, 051, 051, 0.7);
+    border-radius: 5px;
+}
+
+.account{
+    text-align: center;
+    height: 80px;
+    width: 200px;
+    font-size: 20px;
+    line-height: 80px;
+    margin-left: 20%;
+}
+
+.menu_container{
+    display: none;
+}
+
+.menu{
+    display: none;
+}
+
+.acc{
+    display: none;
+}
+
+.intro_bg{
+    width: 100%;
+    height: 850px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.intro_text{
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    margin-top: 330px;
+}
+
+.intro_text img {
+    max-width: 100%;
+    opacity: 0;
+    animation: fadein 1s forwards;
+}
+
+.intro_text h1{
+    font-size: 45px;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(330px);
+    animation: slideUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.intro_text h3{
+    font-size: 25px;
+    opacity: 0;
+    transform: translateY(330px);
+    animation: slideUp 1s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadein {
+    to {
+        opacity: 1;
+    }
+}
+
+.sec_bg {
+    background: blue;
+    width: 100%;
+    height: 550px;
+    display: flex;
+}
+
+.sec_container {
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.sec_text{
+    background: blue;
+    width: 500px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.sec_text h1{
+    font-size: 55px;
+}
+
+.sec_content{
+    background: green;
+    margin-left: 70px;
+    width: 700px;
+    height: 80%;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.thr_bg{
+    background: url(./img/bg1.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 2000px;
+    overflow: hidden;
+}
+
+.thr_bg h2{
+    font-size: 32px;
+    color: black;
+    text-shadow: 
+                1px 1px 0 rgba(255, 255, 255, 0.6),  /* 오른쪽 아래 */
+                -1px -1px 0 rgba(255, 255, 255, 0.6), /* 왼쪽 위 */
+                1px -1px 0 rgba(255, 255, 255, 0.6),  /* 오른쪽 위 */
+                -1px 1px 0 rgba(255, 255, 255, 0.6);  /* 왼쪽 아래 */
+}
+
+.thr_bg h3{
+    font-size: 22px;
+    color: black;
+    text-shadow: 
+                1px 1px 0 rgba(255, 255, 255, 0.6),  /* 오른쪽 아래 */
+                -1px -1px 0 rgba(255, 255, 255, 0.6), /* 왼쪽 위 */
+                1px -1px 0 rgba(255, 255, 255, 0.6),  /* 오른쪽 위 */
+                -1px 1px 0 rgba(255, 255, 255, 0.6);  /* 왼쪽 아래 */
+}
+
+.thr_text{
+    width: 25%;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.thr_text h1{
+    font-size: 50px;
+    opacity: 0;
+    transform: translateY(100px);
+    color: black;
+    text-shadow: 
+                1px 1px 0 rgba(255, 255, 255, 0.6),  /* 오른쪽 아래 */
+                -1px -1px 0 rgba(255, 255, 255, 0.6), /* 왼쪽 위 */
+                1px -1px 0 rgba(255, 255, 255, 0.6),  /* 오른쪽 위 */
+                -1px 1px 0 rgba(255, 255, 255, 0.6);  /* 왼쪽 아래 */
+}
+
+.thr_text h3{
+    opacity: 0;
+    transform: translateY(100px);
+    color: black;
+}
+
+.thr_con1,
+.thr_con2,
+.thr_con3,
+.thr_con4{
+    width: 70%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+.visible {
+    animation: slideUp 1s forwards;
+}
+
+.thr_con1_img,
+.thr_con2_img,
+.thr_con3_img,
+.thr_con4_img{
+    margin: 0 40px;
+    background: blue;
+    width: 370px;
+    height: 250px;
+}
+
+.thr_con1_text,
+.thr_con2_text,
+.thr_con3_text,
+.thr_con4_text{
+    margin: 0 40px;
+    width: 30%;
+}
+
+.card_intro_bg,
+.game_intro_bg{
+    background: red;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.card_intro_text,
+.game_intro_text{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.card_intro_text h1,
+.game_intro_text h1{
+    font-size: 45px;
+    opacity: 0;
+    transform: translateY(150px);
+    animation: slideUp 0.7s forwards;
+}
+
+.card_intro_text h3,
+.game_intro_text h3 {
+    opacity: 0;
+    transform: translateY(150px);
+    animation: slideUp 0.7s forwards;
+    animation-delay: 0.3s;
+}
+
+.card_infor_bg,
+.game_infor_bg{
+    background: purple;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding-bottom: 150px;
+    overflow: hidden;
+}
+
+.card_infor_bg h1,
+.game_infor_bg h1{
+    font-size: 40px;
+}
+
+.card_title,
+.game_infor_title{
+    width: 400px;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(150px);
+    animation: slideUp 0.7s forwards;
+    animation-delay: 0.6s;
+}
+.card_title a,
+.game_infor_title a{
+    position: relative;
+    padding-bottom: 5px;
+    z-index: 0;
+    color: gray;
+}
+
+.link1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.link2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.link3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.link4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.card_title a.active,
+.game_infor_title a.active{
+    color: white;
+}
+
+.card_title a.active::after,
+.game_infor_title a.active::after{
+    transform: scaleX(1);
+}
+
+.card_title a[data-direction="right"].active::after,
+.game_infor_title a[data-direction="right"].active::after{
+    transform-origin: bottom right;
+}
+
+.card_title a[data-direction="left"].active::after,
+.game_infor_title a[data-direction="left"].active::after{
+    transform-origin: bottom left;
+}
+
+.attcard_section{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.spcard_section{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.card_infor{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card_infor li{
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+.card{
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 176px;
+    height: 221px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: black;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.24), 0 0 20px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.attcard_section, .spcard_section, .game_infor_text1, .game_infor_text2 {
+    display: none; /* 기본적으로 숨김 */
+}
+
+.attcard_section.active, .spcard_section.active, .game_infor_text1.active, .game_infor_text2.active {
+    display: block; /* 활성화된 섹션 보이기 */
+}
+
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* 배경 색상 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal img {
+    max-width: 352px;
+    max-height: 442px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+.game_infor_text1,
+.game_infor_text2{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+.login_bg,
+.register_bg,
+.userinfor_bg {
+    width: auto;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('img/img1.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.login-container,
+.register-container {
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    width: 400px;
+    height: 400px;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(200px);
+    animation: slideUp 0.7s forwards;
+    animation-delay: 0.5s;
+}
+
+.login-container h2, 
+.register-container h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+input {
+    width: 70%;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    background: none;
+}
+
+button {
+    width: 70%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    color: black;
+}
+
+button:hover {
+    background-color: beige;
+}
+
+.links {
+    text-align: center;
+}
+
+.userinfor_container {
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    width: 500px;
+    height: 350px;
+    margin: 200px 20px;
+    opacity: 0;
+    transform: translateY(200px);
+    animation: slideUp 0.7s forwards;
+    animation-delay: 0.5s;
+}
+
+.userinfor_container h2{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.userinfor_container p{
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1500px){
+    .sec_content{
+        width: 50%;
+        height: 80%;
+    }
+
+    .sec_text{
+        width: 35%;
+    }
+}
+
+@media (max-width: 1130px){
+    .thr_bg{
+        background-size: cover;
+    }
+}
+
+@media (max-width: 1000px){
+    .sec_container{
+        flex-direction: column;
+    }
+
+    .header{
+        width: 100%;
+        top: 0;
+        height: 60px;
+        border-radius: 0;
+        background: black;
+        display: flex;
+        align-items: center;
+    }
+
+    .title{
+        font-size: 28px;
+        margin: 0 auto;
+        line-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title a:hover {
+        color: rgb(230, 230, 230);
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .account{
+        display: none;
+    }
+
+    .icon{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .menu{
+        display: flex;
+        filter: invert();
+        width: 20px;
+        height: 20px;
+        margin: auto;
+    }
+
+    .menu:hover{
+        background: rgba(189, 189, 189, 0.7);
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+    .acc{
+        display: flex;
+        filter: invert();
+        width: 20px;
+        height: 20px;
+        margin: auto;
+    }
+
+    .acc:hover{
+        background: rgba(189, 189, 189, 0.7);
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+    .menu_container{
+        background: rgb(41, 41, 41);
+        margin-top: 60px;
+        flex-direction: column;
+        display: flex;
+        position: fixed;
+        min-width: 20%;
+        z-index: 1;
+        margin-left: 10px;
+        padding-left: 5px;
+        border-radius: 5px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
+    .menu_container a{
+        font-size: 22px;
+        border-bottom: solid 3px;
+        border-color: rgb(22, 22, 22);
+        border-bottom-right-radius: 5px;
+    }
+
+    .menu_container a:hover{
+        color: rgb(194, 194, 194);
+    }
+
+    .menu_container.active{
+        max-height: 200px;
+    }
+    
+    .sec_text{
+        text-align: center;
+        width: 100%;
+    }
+
+    .sec_content{
+        width: 600px;
+        height: 60%;
+        margin-left: 0px;
+        margin: auto;
+    }
+
+    .thr_bg{
+        height: auto;
+    }
+
+    .thr_text{
+        width: 90%;
+    }
+
+    .thr_text h1{
+        font-size: 55px;
+    }
+
+    .thr_text h3{
+        font-size: 25px;
+    }
+
+    .thr_con1,
+    .thr_con2,
+    .thr_con3,
+    .thr_con4{
+        flex-direction: column;
+        width: 80%;
+        height: 500px;
+        margin-bottom: 25px;
+        margin-top: 30px;
+    }
+
+    .thr_con1_img,
+    .thr_con3_img{
+        max-width: 470px;
+        max-height: 350px;
+        margin-bottom: 10px;
+    }
+
+    .thr_con2_img,
+    .thr_con4_img{
+        max-width: 470px;
+        max-height: 350px;
+        margin-bottom: 10px;
+        order: 1;
+    }
+
+    .thr_con1_text,
+    .thr_con3_text{
+        width: 70%;
+        text-align: center;
+    }
+
+    .thr_con2_text,
+    .thr_con4_text{
+        width: 70%;
+        text-align: center;
+        order: 2;
+    }
+
+    .card_infor {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+}
+
+@media (max-width: 800px){
+    .sec_content{
+        width: 85%;
+        height: 60%;
+    }
+
+    .sec_container{
+        background: black;
+    }
+}
+
+@media (max-width: 700px){
+    .card_infor {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .card_intro_text{
+        width: 60%;
+    }
+}
