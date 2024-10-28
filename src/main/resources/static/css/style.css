@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'heiro';
-    src: url('font/HeirofLightBold.ttf') format('truetype');
+    src: url('../font/HeirofLightBold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,7 +16,7 @@
 }
 
 .wrap {
-    background: url('./img/img1.png') no-repeat;
+    background: url('../img/img1.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -175,7 +175,7 @@
 }
 
 .thr_bg{
-    background: url(./img/bg1.png) no-repeat;
+    background: url(../img/bg1.png) no-repeat;
     background-size: contain;
     background-position: center;
     width: 100%;
@@ -516,7 +516,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('img/img1.png') no-repeat;
+    background: url('../img/img1.png') no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -529,7 +529,7 @@
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     width: 400px;
-    height: 400px;
+    height: 450px;
     margin: 200px auto;
     display: flex;
     flex-direction: column;

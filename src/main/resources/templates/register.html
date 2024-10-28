@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/main/resources/static/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>로그인</title>
 </head>
 
@@ -12,17 +12,17 @@
     <div class="wrap">
         <div class="header">
             <div class="icon">
-                <a href="Main.html" class="menu"><img src="/src/main/resources/static/img/menu.png" alt="qwer"></a>
+                <a href="/api/main" class="menu"><img src="/img/menu.png" alt="qwer"></a>
             </div>
             <div class="title">
-                <a href="Main.html">The Final Night</a>
+                <a href="/api/main">The Final Night</a>
             </div>
             <div class="icon">
-                <a href="login.html" class="acc"><img src="/src/main/resources/static/img/acc.png" alt="qewr"></a>
+                <a href="login.html" class="acc"><img src="/img/acc.png" alt="qewr"></a>
             </div>
             <ul class="nav">
-                <li><a href="gameinfor.html" class="dropbtn">게임소개</a></li>
-                <li><a href="card.html" class="dropbtn">카드</a></li>
+                <li><a href="/api/gameinfor" class="dropbtn">게임소개</a></li>
+                <li><a href="/api/card" class="dropbtn">카드</a></li>
             </ul>
             <div class="account">
                 <a href="login.html" id="loginBtn" class="loginbtn">로그인</a>
@@ -39,6 +39,7 @@
                 <form action="#" th:action="@{/api/register}" method="POST" th:object="${user}">
                     <input type="text" th:field="*{userId}" placeholder="아이디" required />
                     <input type="password" th:field="*{userPassword}" placeholder="비밀번호" required />
+                    <input type="text" th:field="*{nickname}" placeholder="닉네임" required />
                     <button type="submit">회원가입</button>
                 </form>
                 <div th:if="${param.success}">
@@ -47,7 +48,7 @@
         </div>
     </div>
     </div>
-    <script src="/src/main/resources/static/aniScript.js"></script>
+    <script src="/js/aniScript.js"></script>
 </body>
 
 </html>
