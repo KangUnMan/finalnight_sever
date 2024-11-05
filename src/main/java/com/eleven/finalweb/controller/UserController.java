@@ -9,28 +9,49 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller // @RestController가 아닌 @Controller 사용
+@Controller
 @RequestMapping("/api")
 public class UserController {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final UserService userService;
 
     @Autowired
-    private UserService userService;
+    public UserController(UserRepository userRepository, UserService userService) {
+        this.userRepository = userRepository;
+        this.userService = userService;
+    }
+
+    // Web pages rendering
+    @GetMapping("/main")
+    public String showMainPage() {
+        return "Main"; // resources/templates/Main.html
+    }
+
+    @GetMapping("/login")
+    public String showLoginPage() {
+        return "login"; // resources/templates/login.html
+    }
 
     @GetMapping("/register")
-    public String showRegistrationForm(Model model) {
-        model.addAttribute("user", new User());
-        return "register"; // 템플릿 파일 이름 반환
+    public String showRegisterPage(Model model) {
+        model.addAttribute("user", new User()); // User 객체를 모델에 추가
+        return "register"; // resources/templates/register.html 반환
     }
 
+    @GetMapping("/userinfor")
+    public String showUserInformationPage() {
+        return "userinfor"; // resources/templates/userinfor.html
+    }
+
+    // User registration
     @PostMapping("/register")
-    public String processRegistration(User user) {
+    public String processRegistration(@ModelAttribute User user) {
         userService.saveUserWithGameData(user);
-        return "redirect:/api/register?success"; // 리다이렉트 URL 수정
+        return "redirect:/register?success";
     }
 
+    // User login
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestParam String userId, @RequestParam String userPassword) {
         boolean authenticated = userService.authenticate(userId, userPassword);
@@ -42,12 +63,15 @@ public class UserController {
         }
     }
 
+    // Get user nickname
     @GetMapping("/nickname")
-    public @ResponseBody NicknameResponse getNickname(@RequestParam Long userNum) {
+    @ResponseBody
+    public NicknameResponse getNickname(@RequestParam Long userNum) {
         String nickname = userService.getNickname(userNum);
         return nickname != null ? new NicknameResponse(true, nickname) : new NicknameResponse(false, "User not found");
     }
 
+    // Response classes
     static class LoginResponse {
         private boolean success;
         private String message;
@@ -111,5 +135,4 @@ public class UserController {
             this.nickname = nickname;
         }
     }
-
 }
