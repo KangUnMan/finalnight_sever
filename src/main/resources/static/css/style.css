@@ -81,6 +81,16 @@
     margin-left: 20%;
 }
 
+.userinfor{
+    text-align: center;
+    height: 80px;
+    width: 200px;
+    font-size: 20px;
+    line-height: 80px;
+    margin-left: 20%;
+    display: none;
+}
+
 .menu_container{
     display: none;
 }

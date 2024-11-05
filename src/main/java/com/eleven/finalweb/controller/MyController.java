@@ -15,11 +15,16 @@ public class MyController {
 
     @GetMapping("/card")
     public String card() {
-        return "card"; // main.html 파일을 보여줍니다.
+        return "card"; // card.html 파일을 보여줍니다.
     }
 
     @GetMapping("/gameinfor")
     public String gameinfor() {
-        return "gameinfor"; // main.html 파일을 보여줍니다.
+        return "gameinfor"; // gameinfor.html 파일을 보여줍니다.
+    }
+
+    @GetMapping("/userinfor")
+    public String userinfor() {
+        return "userinfor"; // userinfor.html 파일을 보여줍니다.
     }
 }

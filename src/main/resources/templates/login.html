@@ -12,43 +12,46 @@
     <div class="wrap">
         <div class="header">
             <div class="icon">
-                <a href="main.html" class="menu"><img src="/src/main/resources/static/img/menu.png" alt="qwer"></a>
+                <a href="/api/main" class="menu"><img src="/img/menu.png" alt="qwer"></a>
             </div>
             <div class="title">
-                <a href="main.html">The Final Night</a>
+                <a href="/api/main">The Final Night</a>
             </div>
             <div class="icon">
-                <a href="login.html" class="acc"><img src="/src/main/resources/static/img/acc.png" alt="qewr"></a>
+                <a href="/api/login" class="acc"><img src="/img/acc.png" alt="qewr"></a>
             </div>
             <ul class="nav">
-                <li><a href="gameinfor.html" class="dropbtn">게임소개</a></li>
-                <li><a href="card.html" class="dropbtn">카드</a></li>
+                <li><a href="/api/gameinfor" class="dropbtn">게임소개</a></li>
+                <li><a href="/api/card" class="dropbtn">카드</a></li>
             </ul>
             <div class="account">
-                <a href="login.html" id="loginBtn" class="loginbtn">로그인</a>
+                <a href="/api/login" id="loginBtn" class="loginbtn">로그인</a>
+            </div>
+            <div class="userinfor">
+                <a href="/api/userinfor" id="loginBtn" class="loginbtn">유저정보</a>
             </div>
         </div>
         <div class="menu_container">
-            <a href="card.html">카드</a>
-            <a href="gameinfor.html">게임소개</a>
+            <a href="/api/card">카드</a>
+            <a href="/api/gameinfor">게임소개</a>
         </div>
         <div class="login_bg">
             <div class="login-container">
                 <h2>로그인</h2>
-                <form action="login_process.php" method="POST">
-                    <input type="text" placeholder="아이디" id="username" name="username" required>
-                    <input type="password" placeholder="비밀번호" id="password" name="password" required>
+                <form id="loginForm" action="/login" method="POST">
+                    <input type="text" placeholder="아이디" id="userId" name="userId" required>
+                    <input type="password" placeholder="비밀번호" id="userPassword" name="userPassword" required>
                     <button type="submit">로그인</button>
                 </form>
                 <div class="links">
                     <!-- <p><a href="forgot_password.html">비밀번호 찾기</a></p> -->
-                    <p><a href="register.html">회원가입</a></p>
+                    <p><a href="/api/register">회원가입</a></p>
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <script src="/js/aniScript.js"></script>
+    <script src="/js/loginscript.js"></script>
 </body>
 
 </html>
