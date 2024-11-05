@@ -46,9 +46,10 @@ public class UserController {
 
     // User registration
     @PostMapping("/register")
-    public String processRegistration(@ModelAttribute User user) {
+    public String processRegistration(@ModelAttribute User user, Model model) {
         userService.saveUserWithGameData(user);
-        return "redirect:/register?success";
+        model.addAttribute("user", user); // 회원 정보 추가
+        return "register_success"; // 회원가입 성공 페이지로 이동
     }
 
     // User login
