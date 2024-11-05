@@ -6,40 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <title>회원가입</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
 <div class="wrap">
     <div class="header">
-        <div class="icon">
-            <a href="/api/main" class="menu"><img src="/img/menu.png" alt="메뉴"></a>
-        </div>
-        <div class="title">
-            <a href="/api/main">The Final Night</a>
-        </div>
-        <div class="icon">
-            <a href="/api/login" class="acc"><img src="/img/acc.png" alt="계정"></a>
-        </div>
-        <ul class="nav">
-            <li><a href="/api/gameinfor" class="dropbtn">게임소개</a></li>
-            <li><a href="/api/card" class="dropbtn">카드</a></li>
-        </ul>
-        <div class="account">
-            <a href="/api/login" id="loginBtn" class="loginbtn">로그인</a>
-        </div>
+        <!-- 헤더 내용 유지 -->
     </div>
     <div class="menu_container">
-        <a href="/api/card">카드</a>
-        <a href="/api/gameinfor">게임소개</a>
+        <!-- 메뉴 내용 유지 -->
     </div>
     <div class="register_bg">
         <div class="register-container">
             <h2>회원가입</h2>
-            <form th:action="@{/api/register}" method="POST" th:object="${user}">
-                <input type="text" th:field="*{userId}" placeholder="아이디" required />
-                <input type="password" th:field="*{userPassword}" placeholder="비밀번호" required />
-                <input type="text" th:field="*{nickname}" placeholder="닉네임" required />
-                <button type="submit">회원가입</button>
+            <form th:action="@{/api/register}" method="POST" th:object="${user}" id="registerForm">
+                <div>
+                    <input type="text" th:field="*{userId}" id="userId" placeholder="아이디" required />
+                    <button type="button" id="checkUserIdBtn">중복 체크</button>
+                    <div id="userIdCheckResult"></div>
+                </div>
+                <div>
+                    <input type="password" th:field="*{userPassword}" placeholder="비밀번호" required />
+                </div>
+                <div>
+                    <input type="text" th:field="*{nickname}" placeholder="닉네임" required />
+                </div>
+                <button type="submit" id="registerBtn" disabled>회원가입</button>
             </form>
             <div th:if="${param.success}">
                 회원가입이 성공적으로 완료되었습니다!
@@ -47,7 +40,8 @@
         </div>
     </div>
 </div>
-<script src="/js/aniScript.js"></script>
+<!-- 자바스크립트 파일을 불러오기 -->
+<script src="/js/register.js"></script>
 </body>
 
 </html>

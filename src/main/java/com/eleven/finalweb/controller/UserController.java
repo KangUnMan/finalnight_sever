@@ -71,6 +71,13 @@ public class UserController {
         return nickname != null ? new NicknameResponse(true, nickname) : new NicknameResponse(false, "User not found");
     }
 
+    // 아이디 중복 체크 API
+    @GetMapping("/check-userId")
+    public ResponseEntity<Boolean> checkUserId(@RequestParam String userId) {
+        boolean isUserIdExists = userService.isUserIdExists(userId);
+        return ResponseEntity.ok(isUserIdExists);
+    }
+
     // Response classes
     static class LoginResponse {
         private boolean success;

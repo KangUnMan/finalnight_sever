@@ -16,6 +16,10 @@ public class UserService {
     @Autowired
     private GameDataRepository gameDataRepository;
 
+    public boolean isUserIdExists(String userId) { // 회원가입시 아이디 중복체크
+        return userRepository.findByUserId(userId) != null;
+    }
+
     public boolean authenticate(String userid, String password) {
         return userRepository.findByUserIdAndUserPassword(userid, password).isPresent();
     }
