@@ -23,9 +23,16 @@ public class UserController {
         this.userService = userService;
     }
 
-    // Web pages rendering
+    // Main Page rendering
     @GetMapping("/main")
-    public String showMainPage() {
+    public String showMainPage(HttpSession session, Model model) {
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            model.addAttribute("loggedInUser", loggedInUser);
+            System.out.println("메인 페이지에서 세션 사용자 확인: " + loggedInUser.getUserId());
+        } else {
+            System.out.println("세션에 저장된 사용자 정보가 없습니다.");
+        }
         return "Main"; // resources/templates/Main.html
     }
 
@@ -41,7 +48,11 @@ public class UserController {
     }
 
     @GetMapping("/userinfor")
-    public String showUserInformationPage() {
+    public String showUserInformationPage(HttpSession session, Model model) {
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            model.addAttribute("loggedInUser", loggedInUser);
+        }
         return "userinfor"; // resources/templates/userinfor.html
     }
 
@@ -53,7 +64,7 @@ public class UserController {
         return "register_success"; // 회원가입 성공 페이지로 이동
     }
 
-    // User login
+    // User login (for API request)
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestParam String userId, @RequestParam String userPassword) {
         boolean authenticated = userService.authenticate(userId, userPassword);
@@ -65,7 +76,8 @@ public class UserController {
         }
     }
 
-    @PostMapping({"/web-login"})
+    // User login (for web)
+    @PostMapping("/web-login")
     public String webLogin(@RequestParam String userId, @RequestParam String userPassword, Model model, HttpSession session) {
         boolean authenticated = this.userService.authenticate(userId, userPassword);
         if (authenticated) {
@@ -80,6 +92,7 @@ public class UserController {
         }
     }
 
+    // User logout
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate(); // 세션 무효화
@@ -94,7 +107,7 @@ public class UserController {
         return nickname != null ? new NicknameResponse(true, nickname) : new NicknameResponse(false, "User not found");
     }
 
-    // 아이디 중복 체크 API
+    // Check if userId exists
     @GetMapping("/check-userId")
     public ResponseEntity<Boolean> checkUserId(@RequestParam String userId) {
         boolean isUserIdExists = userService.isUserIdExists(userId);

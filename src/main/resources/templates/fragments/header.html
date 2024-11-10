@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Header Fragment</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/userDropdown.js" defer></script>
 </head>
 <body>
 <div th:fragment="header">
@@ -17,9 +19,6 @@
             <a href="/api/login" class="acc" th:if="${loggedInUser == null}">
                 <img src="/img/acc.png" alt="account">
             </a>
-            <span th:if="${loggedInUser != null}">
-                <span th:text="${loggedInUser.nickname} + '님'"></span>
-            </span>
         </div>
         <ul class="nav">
             <li><a href="/api/gameinfor" class="dropbtn">게임소개</a></li>
@@ -27,12 +26,14 @@
         </ul>
         <div class="account">
             <a href="/api/login" th:if="${loggedInUser == null}">로그인</a>
-            <a href="/api/logout" th:if="${loggedInUser != null}">로그아웃</a>
-        </div>
-        <div class="userinfor" th:if="${loggedInUser != null}">
-            <a href="/api/userinfor" id="loginBtn" class="loginbtn">유저정보</a>
+            <span class="user-nickname" id="userDropdown" th:if="${loggedInUser != null}" th:text="${loggedInUser.nickname} + '님'"></span>
+            <div class="dropdown-content" id="dropdownContent" th:if="${loggedInUser != null}">
+                <a href="/api/userinfor">유저정보</a>
+                <a href="/api/logout">로그아웃</a>
+            </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>

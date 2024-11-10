@@ -9,24 +9,9 @@
 </head>
 <body>
     <div class="wrap">
-        <div class="header">
-            <div class="icon">
-                <a href="/api/main" class="menu"><img src="/img/menu.png" alt="qwer"></a>
-            </div>
-            <div class="title">
-                <a href="/api/main">The Final Night</a>
-            </div>
-            <div class="icon">
-                <a href="api/login" class="acc"><img src="/img/acc.png" alt="qewr"></a>
-            </div>
-            <ul class="nav">
-                <li><a href="/api/gameinfor" class="dropbtn">게임소개</a></li>
-                <li><a href="/api/card" class="dropbtn">카드</a></li>
-            </ul>
-            <div class="account">
-                <a href="/api/login" id="loginBtn" class="loginbtn">로그인</a>
-            </div>
-        </div>
+        <!-- 공통 헤더 Fragment 포함 -->
+        <div th:replace="fragments/header :: header"></div>
+
         <div class="menu_container">
             <a href="/api/card">카드</a>
             <a href="/api/gameinfor">게임소개</a>
