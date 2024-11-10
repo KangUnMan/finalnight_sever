@@ -10,7 +10,9 @@
 <div th:fragment="header">
     <div class="header">
         <div class="icon">
-            <a href="/api/main" class="menu"><img src="/img/menu.png" alt="menu"></a>
+            <a href="/api/main" class="menu">
+                <img src="/img/menu.png" alt="menu">
+            </a>
         </div>
         <div class="title">
             <a href="/api/main">The Final Night</a>
@@ -26,14 +28,15 @@
         </ul>
         <div class="account">
             <a href="/api/login" th:if="${loggedInUser == null}">로그인</a>
-            <span class="user-nickname" id="userDropdown" th:if="${loggedInUser != null}" th:text="${loggedInUser.nickname} + '님'"></span>
-            <div class="dropdown-content" id="dropdownContent" th:if="${loggedInUser != null}">
-                <a href="/api/userinfor">유저정보</a>
-                <a href="/api/logout">로그아웃</a>
+            <div class="user-dropdown" th:if="${loggedInUser != null}">
+                <span class="user-nickname" id="userDropdown" th:text="${loggedInUser.nickname} + '님'"></span>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="/api/userinfor">유저정보</a>
+                    <a href="/api/logout">로그아웃</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 </body>
 </html>
