@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Header Fragment</title>
+</head>
+<body>
+<div th:fragment="header">
+    <div class="header">
+        <div class="icon">
+            <a href="/api/main" class="menu"><img src="/img/menu.png" alt="menu"></a>
+        </div>
+        <div class="title">
+            <a href="/api/main">The Final Night</a>
+        </div>
+        <div class="icon">
+            <a href="/api/login" class="acc" th:if="${loggedInUser == null}">
+                <img src="/img/acc.png" alt="account">
+            </a>
+            <span th:if="${loggedInUser != null}">
+                <span th:text="${loggedInUser.nickname} + '님'"></span>
+            </span>
+        </div>
+        <ul class="nav">
+            <li><a href="/api/gameinfor" class="dropbtn">게임소개</a></li>
+            <li><a href="/api/card" class="dropbtn">카드</a></li>
+        </ul>
+        <div class="account">
+            <a href="/api/login" th:if="${loggedInUser == null}">로그인</a>
+            <a href="/api/logout" th:if="${loggedInUser != null}">로그아웃</a>
+        </div>
+        <div class="userinfor" th:if="${loggedInUser != null}">
+            <a href="/api/userinfor" id="loginBtn" class="loginbtn">유저정보</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
