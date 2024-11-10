@@ -3,6 +3,7 @@ package com.eleven.finalweb.controller;
 import com.eleven.finalweb.model.User;
 import com.eleven.finalweb.service.UserService;
 import com.eleven.finalweb.repository.UserRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -62,6 +63,27 @@ public class UserController {
         } else {
             return ResponseEntity.status(401).body(new LoginResponse(false, "Invalid credentials", null));
         }
+    }
+
+    @PostMapping({"/web-login"})
+    public String webLogin(@RequestParam String userId, @RequestParam String userPassword, Model model, HttpSession session) {
+        boolean authenticated = this.userService.authenticate(userId, userPassword);
+        if (authenticated) {
+            // 로그인 성공 시 세션에 사용자 정보 저장
+            User user = this.userRepository.findByUserId(userId);
+            session.setAttribute("loggedInUser", user);
+            return "redirect:/api/main";  // 메인 페이지로 리다이렉트
+        } else {
+            // 로그인 실패 시 에러 메시지를 모델에 추가하고 로그인 페이지로 이동
+            model.addAttribute("loginError", "아이디 및 비밀번호를 확인해주세요");
+            return "login";
+        }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate(); // 세션 무효화
+        return "redirect:/api/login"; // 로그인 페이지로 리다이렉트
     }
 
     // Get user nickname
