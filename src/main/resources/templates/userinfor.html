@@ -9,39 +9,21 @@
 </head>
 
 <body>
-    <div class="wrap">
-        <div class="header">
-            <div class="icon">
-                <a href="/api/main" class="menu"><img src="/img/menu.png" alt="qwer"></a>
-            </div>
-            <div class="title">
-                <a href="/api/main">The Final Night</a>
-            </div>
-            <div class="icon">
-                <a href="/api/login" class="acc"><img src="/img/acc.png" alt="qewr"></a>
-            </div>
-            <ul class="nav">
-                <li><a href="/api/gameinfor" class="dropbtn">게임소개</a></li>
-                <li><a href="/api/card" class="dropbtn">카드</a></li>
-            </ul>
-            <div class="account">
-                <a href="/api/login" id="loginBtn" class="loginbtn">로그인</a>
-            </div>
-        </div>
-        <div class="menu_container">
-            <a href="/api/card">카드</a>
-            <a href="/api/gameinfor">게임소개</a>
-        </div>
-        <div class="userinfor_bg">
-            <div class="userinfor_container">
-                <h2>유저정보</h2>
-                <p>이름 : </p>
-                <p>플레이 타임 : </p>
-                <p>클리어 횟수 : </p>
-            </div>
+<div class="wrap">
+    <!-- 공통 헤더 Fragment 포함 -->
+    <div th:replace="fragments/header :: header"></div>
+
+    <div class="userinfor_bg">
+        <div class="userinfor_container">
+            <h2>유저정보</h2>
+            <p>닉네임 : <span th:text="${loggedInUser.nickname}">닉네임</span></p>
+            <p>플레이 타임 : <span class="playtime" th:text="${gameData.playtime}">0</span></p>
+            <p>클리어 횟수 : <span th:text="${gameData.clearCount}">0</span> 번</p>
         </div>
     </div>
-    <script src="/js/aniScript.js"></script>
+</div>
+<script src="/js/aniScript.js"></script>
+<script src="/js/convertTime.js" defer></script>
 </body>
 
 </html>

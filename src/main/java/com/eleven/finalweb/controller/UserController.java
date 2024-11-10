@@ -1,5 +1,6 @@
 package com.eleven.finalweb.controller;
 
+import com.eleven.finalweb.model.GameData;
 import com.eleven.finalweb.model.User;
 import com.eleven.finalweb.service.UserService;
 import com.eleven.finalweb.repository.UserRepository;
@@ -46,14 +47,38 @@ public class UserController {
         model.addAttribute("user", new User()); // User 객체를 모델에 추가
         return "register"; // resources/templates/register.html 반환
     }
-
+    // Userinfor
     @GetMapping("/userinfor")
     public String showUserInformationPage(HttpSession session, Model model) {
         User loggedInUser = (User) session.getAttribute("loggedInUser");
         if (loggedInUser != null) {
             model.addAttribute("loggedInUser", loggedInUser);
+
+            // 게임 데이터 가져오기
+            GameData gameData = userService.findGameDataByUser(loggedInUser);
+            model.addAttribute("gameData", gameData);
         }
         return "userinfor"; // resources/templates/userinfor.html
+    }
+
+    // Card Page rendering
+    @GetMapping("/card")
+    public String showCardPage(HttpSession session, Model model) {
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            model.addAttribute("loggedInUser", loggedInUser);
+        }
+        return "card"; // resources/templates/card.html
+    }
+
+    // Gameinfor Page rendering
+    @GetMapping("/gameinfor")
+    public String showGameInformationPage(HttpSession session, Model model) {
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            model.addAttribute("loggedInUser", loggedInUser);
+        }
+        return "gameinfor"; // resources/templates/gameinfor.html
     }
 
     // User registration

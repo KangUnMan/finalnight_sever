@@ -29,6 +29,11 @@ public class UserService {
         return user != null ? user.getNickname() : null;
     }
 
+    public GameData findGameDataByUser(User user) {
+        return gameDataRepository.findByUser(user);
+    }
+
+
     public void saveUserWithGameData(User user) {
         // Save the user
         userRepository.save(user);
