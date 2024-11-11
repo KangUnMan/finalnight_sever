@@ -29,7 +29,7 @@
         <div class="account">
             <a href="/api/login" th:if="${loggedInUser == null}">로그인</a>
             <div class="user-dropdown" th:if="${loggedInUser != null}">
-                <span class="user-nickname" id="userDropdown" th:text="${loggedInUser.nickname} + '님'"></span>
+                <a href="" class="user-nickname" id="userDropdown" th:text="${loggedInUser.nickname} + '님'"></a>
                 <div class="dropdown-content" id="dropdownContent">
                     <a href="/api/userinfor">유저정보</a>
                     <a href="/api/logout">로그아웃</a>
