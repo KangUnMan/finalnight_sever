@@ -73,11 +73,13 @@
 }
 
 .account{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     height: 80px;
     width: 200px;
     font-size: 20px;
-    line-height: 80px;
     margin-left: 20%;
 }
 
@@ -642,7 +644,7 @@ button:hover {
     }
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1500px){
     .sec_container{
         flex-direction: column;
     }
@@ -685,6 +687,8 @@ button:hover {
         align-items: center;
         margin-left: 10px;
         margin-right: 10px;
+        background: red;
+        position: relative;
     }
 
     .menu{
@@ -701,7 +705,8 @@ button:hover {
         border-radius: 5px;
     }
 
-    .acc{
+    .acc,
+    .acc2{
         display: flex;
         filter: invert();
         width: 20px;
@@ -709,7 +714,8 @@ button:hover {
         margin: auto;
     }
 
-    .acc:hover{
+    .acc:hover,
+    .acc2:hover{
         background: rgba(189, 189, 189, 0.7);
         padding: 8px;
         border-radius: 5px;
@@ -717,14 +723,12 @@ button:hover {
 
     .menu_container{
         background: rgb(41, 41, 41);
-        margin-top: 60px;
+        top: 60px;
         flex-direction: column;
         display: flex;
-        position: fixed;
+        position: absolute;
         min-width: 20%;
         z-index: 1;
-        margin-left: 10px;
-        padding-left: 5px;
         border-radius: 5px;
         max-height: 0;
         overflow: hidden;
@@ -733,9 +737,8 @@ button:hover {
 
     .menu_container a{
         font-size: 22px;
-        border-bottom: solid 3px;
+        border: solid 3px;
         border-color: rgb(22, 22, 22);
-        border-bottom-right-radius: 5px;
     }
 
     .menu_container a:hover{
@@ -743,6 +746,35 @@ button:hover {
     }
 
     .menu_container.active{
+        max-height: 200px;
+    }
+
+    .acc_container{
+        background: rgb(41, 41, 41);
+        top: 60px;
+        flex-direction: column;
+        display: flex;
+        position: absolute;
+        min-width: 20%;
+        z-index: 1;
+        border-radius: 5px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        right: 0;
+    }
+
+    .acc_container a{
+        font-size: 22px;
+        border: solid 3px;
+        border-color: rgb(22, 22, 22);
+    }
+
+    .acc_container a:hover{
+        color: rgb(194, 194, 194);
+    }
+
+    .acc_container.active{
         max-height: 200px;
     }
     
@@ -853,24 +885,26 @@ button:hover {
     border-radius: 5px;
     position: absolute;
     background: rgb(41, 41, 41);
-    min-width: 110px;
+    max-width: 130%;
     z-index: 1;
     max-height: 0px;
     transition: max-height 0.5s ease;
+    transform-origin: bottom;
     overflow: hidden;
+    top: 80px;
 }
 
 .dropdown-content.active {
-    max-height: 250px;
+    max-height: 100px;
 }
 
 .dropdown-content a {
     color: white;
     text-decoration: none;
-    border-bottom: solid 3px;
+    border: solid 2px;
     border-color: rgb(22, 22, 22);
-    font-size: 18px;
-    flex: 1;
+    font-size: 1vw;
+    padding: 10px 10px;
 }
 
 .dropdown-content a:hover {

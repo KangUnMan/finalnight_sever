@@ -14,6 +14,10 @@
                 <img src="/img/menu.png" alt="menu">
             </a>
         </div>
+        <div class="menu_container">
+            <a href="/api/card">카드</a>
+            <a href="/api/gameinfor">게임소개</a>
+        </div>
         <div class="title">
             <a href="/api/main">The Final Night</a>
         </div>
@@ -21,6 +25,13 @@
             <a href="/api/login" class="acc" th:if="${loggedInUser == null}">
                 <img src="/img/acc.png" alt="account">
             </a>
+            <a href="/api/userinfor" class="acc2" th:if="${loggedInUser != null}">
+                <img src="/img/acc.png" alt="account">
+            </a>
+        </div>
+        <div class="acc_container">
+            <a href="/api/userinfor">유저정보</a>
+            <a href="/api/logout">로그아웃</a>
         </div>
         <ul class="nav">
             <li><a href="/api/gameinfor" class="dropbtn">게임소개</a></li>
@@ -30,10 +41,10 @@
             <a href="/api/login" th:if="${loggedInUser == null}">로그인</a>
             <div class="user-dropdown" th:if="${loggedInUser != null}">
                 <a href="" class="user-nickname" id="userDropdown" th:text="${loggedInUser.nickname} + '님'"></a>
-                <div class="dropdown-content" id="dropdownContent">
-                    <a href="/api/userinfor">유저정보</a>
-                    <a href="/api/logout">로그아웃</a>
-                </div>
+            </div>
+            <div class="dropdown-content" id="dropdownContent">
+                <a href="/api/userinfor">유저정보</a>
+                <a href="/api/logout">로그아웃</a>
             </div>
         </div>
     </div>
