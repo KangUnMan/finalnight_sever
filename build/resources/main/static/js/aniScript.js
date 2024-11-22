@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    window.addEventListener('scroll', handleScroll);
 
     const menu = document.querySelector('.menu');
     const menucontainer = document.querySelector('.menu_container');
@@ -41,7 +42,4 @@ document.addEventListener('DOMContentLoaded', function() {
             acccontainer.classList.remove('active'); // active 클래스 제거
         }
     });
-
-    // 스크롤 이벤트 리스너 추가
-    window.addEventListener('scroll', handleScroll);
 });

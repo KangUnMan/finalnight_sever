@@ -16,7 +16,7 @@
 }
 
 .wrap {
-    background: url('../img/img1.png') no-repeat;
+    background: url('../img/img1.webp') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -101,6 +101,10 @@
     display: none;
 }
 
+.acc_container{
+    display: none;
+}
+
 .acc{
     display: none;
 }
@@ -126,7 +130,7 @@
 }
 
 .intro_text h1{
-    font-size: 45px;
+    font-size: 30px;
     margin-top: 30px;
     opacity: 0;
     transform: translateY(330px);
@@ -149,14 +153,19 @@
 }
 
 .sec_bg {
-    background: blue;
+    background: url("../img/sec_bg.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
     height: 550px;
     display: flex;
+    border-bottom: solid 6px black;
+    border-top: solid 6px black;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.7);
+    position: relative;
 }
 
 .sec_container {
-    background: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +175,6 @@
 }
 
 .sec_text{
-    background: blue;
     width: 500px;
     opacity: 0;
     transform: translateY(50px);
@@ -174,7 +182,7 @@
 }
 
 .sec_text h1{
-    font-size: 55px;
+    font-size: 50px !important;
 }
 
 .sec_content{
@@ -187,7 +195,7 @@
 }
 
 .thr_bg{
-    background: url(../img/bg1.png) no-repeat;
+    background: url(../img/bg1.webp) no-repeat;
     background-size: contain;
     background-position: center;
     width: 100%;
@@ -278,11 +286,14 @@
 
 .card_intro_bg,
 .game_intro_bg{
-    background: red;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 400px;
     display: flex;
     align-items: center;
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.5);
 }
 
 .card_intro_text,
@@ -300,6 +311,13 @@
     animation: slideUp 0.7s forwards;
 }
 
+.game_intro_text h2{
+    opacity: 0;
+    transform: translateY(150px);
+    animation: slideUp 0.7s forwards;
+    animation-delay: 0.2s;
+}
+
 .card_intro_text h3,
 .game_intro_text h3 {
     opacity: 0;
@@ -310,7 +328,6 @@
 
 .card_infor_bg,
 .game_infor_bg{
-    background: purple;
     width: 100%;
     height: auto;
     align-items: center;
@@ -421,14 +438,7 @@
     transform-origin: bottom left;
 }
 
-.attcard_section{
-    width: 80%;
-    height: auto;
-    margin: auto;
-    margin-top: 50px;
-    text-align: center;
-}
-
+.attcard_section,
 .spcard_section{
     width: 80%;
     height: auto;
@@ -438,11 +448,16 @@
 }
 
 .card_infor{
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     max-width: 1000px;
     margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
 .card_infor li{
@@ -511,13 +526,20 @@
 
 .game_infor_text1,
 .game_infor_text2{
-    width: 40%;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    width: 50%;
     height: auto;
     margin: auto;
     margin-top: 50px;
     text-align: center;
     opacity: 0;
     transform: translateY(150px);
+    line-height: 2;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+
 }
 
 .login_bg,
@@ -644,7 +666,7 @@ button:hover {
     }
 }
 
-@media (max-width: 1500px){
+@media (max-width: 1000px){
     .sec_container{
         flex-direction: column;
     }
@@ -687,7 +709,6 @@ button:hover {
         align-items: center;
         margin-left: 10px;
         margin-right: 10px;
-        background: red;
         position: relative;
     }
 
@@ -854,11 +875,7 @@ button:hover {
 @media (max-width: 800px){
     .sec_content{
         width: 85%;
-        height: 60%;
-    }
-
-    .sec_container{
-        background: black;
+        height: 50%;
     }
 }
 
@@ -870,6 +887,13 @@ button:hover {
 
     .card_intro_text{
         width: 60%;
+    }
+}
+
+@media (max-width: 550px) {
+    .sec_content{
+        width: 80%;
+        height: 45%;
     }
 }
 
