@@ -449,7 +449,7 @@
 
 .card_infor{
     background: transparent;
-    backdrop-filter: blur(20px);
+    /*backdrop-filter: blur(20px);*/
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.4);
     display: grid;
@@ -473,13 +473,10 @@
     height: 221px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: black;
 }
 
 .card:hover{
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.24), 0 0 20px rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
 }
 
 .attcard_section, .spcard_section, .game_infor_text1, .game_infor_text2 {
