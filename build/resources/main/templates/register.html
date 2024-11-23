@@ -4,19 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>회원가입</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
 <div class="wrap">
-    <div class="header">
-        <!-- 헤더 내용 유지 -->
-    </div>
-    <div class="menu_container">
-        <!-- 메뉴 내용 유지 -->
-    </div>
+    <!-- 공통 헤더 Fragment 포함 -->
+    <div th:replace="fragments/header :: header"></div>
+
     <div class="register_bg">
         <div class="register-container">
             <h2>회원가입</h2>

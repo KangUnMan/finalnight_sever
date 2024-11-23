@@ -560,7 +560,7 @@
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     width: 400px;
-    height: 450px;
+    height: 500px;
     margin: 200px auto;
     display: flex;
     flex-direction: column;
@@ -930,5 +930,37 @@ button:hover {
 
 .dropdown-content a:hover {
     color: rgb(194, 194, 194);
+}
+
+.register-success-container_bg{
+    background: url("../img/img1.webp") no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+}
+
+.register-success-container{
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(200px);
+    animation: slideUp 0.7s forwards;
+    animation-delay: 0.5s;
+}
+
+.register-success-container > button{
+    margin: 20px auto;
 }
 
