@@ -266,14 +266,47 @@
     animation: slideUp 1s forwards;
 }
 
-.thr_con1_img,
-.thr_con2_img,
-.thr_con3_img,
-.thr_con4_img{
+.thr_con1_img{
     margin: 0 40px;
     background: blue;
     width: 370px;
     height: 250px;
+}
+
+.thr_con2_img{
+    margin: 0 40px;
+    background: url("../img/mainimg3.png");
+    background-size: cover;
+    background-position: center;
+    width: 370px;
+    height: 250px;
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.thr_con3_img{
+    margin: 0 40px;
+    background: url("../img/mainimg2.png");
+    background-size: cover;
+    background-position: center;
+    width: 370px;
+    height: 250px;
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.thr_con4_img{
+    margin: 0 40px;
+    background: url("../img/mainimg1.png");
+    background-size: cover;
+    background-position: center;
+    width: 370px;
+    height: 250px;
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 .thr_con1_text,
