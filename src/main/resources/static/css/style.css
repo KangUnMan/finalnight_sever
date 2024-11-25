@@ -313,7 +313,7 @@
 .thr_con3_text,
 .thr_con4_text{
     margin: 0 40px;
-    min-width: 30%;
+    width: 30%;
 }
 
 .card_intro_bg,
@@ -689,14 +689,14 @@ button:hover {
     }
 }
 
-@media (max-width: 1130px){
+@media (max-width: 1250px){
     .thr_bg{
         background-size: cover;
-        width: 100%;
+        width: 80%;
     }
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1100px){
     .sec_container{
         flex-direction: column;
     }
@@ -843,6 +843,7 @@ button:hover {
 
     .thr_bg{
         height: auto;
+        width: 100%;
     }
 
     .thr_text{
