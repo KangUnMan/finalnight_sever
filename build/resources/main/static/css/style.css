@@ -186,21 +186,27 @@
 }
 
 .sec_content{
-    background: green;
+    background: url("../img/mainimg3.png");
+    background-position: center;
+    background-size: cover;
     margin-left: 70px;
     width: 700px;
     height: 80%;
     opacity: 0;
     transform: translateY(100px);
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 .thr_bg{
     background: url(../img/bg1.webp) no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
-    width: 100%;
-    height: 2000px;
+    width: 70%;
+    height: auto;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .thr_bg h2{
@@ -252,7 +258,7 @@
 .thr_con2,
 .thr_con3,
 .thr_con4{
-    width: 70%;
+    width: 80%;
     height: 400px;
     margin: auto;
     display: flex;
@@ -266,19 +272,12 @@
     animation: slideUp 1s forwards;
 }
 
-.thr_con1_img{
-    margin: 0 40px;
-    background: blue;
-    width: 370px;
-    height: 250px;
-}
-
 .thr_con2_img{
     margin: 0 40px;
     background: url("../img/mainimg3.png");
     background-size: cover;
     background-position: center;
-    width: 370px;
+    min-width: 370px;
     height: 250px;
     border-radius: 5px;
     border: 5px solid rgba(0,0,0,1);
@@ -290,7 +289,7 @@
     background: url("../img/mainimg2.png");
     background-size: cover;
     background-position: center;
-    width: 370px;
+    min-width: 370px;
     height: 250px;
     border-radius: 5px;
     border: 5px solid rgba(0,0,0,1);
@@ -302,7 +301,7 @@
     background: url("../img/mainimg1.png");
     background-size: cover;
     background-position: center;
-    width: 370px;
+    min-width: 370px;
     height: 250px;
     border-radius: 5px;
     border: 5px solid rgba(0,0,0,1);
@@ -314,7 +313,7 @@
 .thr_con3_text,
 .thr_con4_text{
     margin: 0 40px;
-    width: 30%;
+    min-width: 30%;
 }
 
 .card_intro_bg,
@@ -693,6 +692,7 @@ button:hover {
 @media (max-width: 1130px){
     .thr_bg{
         background-size: cover;
+        width: 100%;
     }
 }
 
